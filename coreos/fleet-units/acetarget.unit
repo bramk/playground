@@ -4,4 +4,6 @@ After=docker.service
 Requires=docker.service
 
 [Service]
+ExecStartPre=/usr/bin/docker build -t playground/base /home/core/playground/coreos/docker-files/base \
+		&& /usr/bin/docker build -t playground/acetarget /home/core/playground/coreos/docker-files/acetarget
 ExecStart=/usr/bin/docker run bramk/target /usr/bin/java -Dagent.identification.agentid=Agent-%m -Dagent.discovery.serverurls=http://172.17.8.1:8080 -jar /tmp/org.apache.ace.agent.launcher.felix-1.0.0.jar

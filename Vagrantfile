@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
       ip = "172.17.8.#{i+100}"
       config.vm.network :private_network, ip: ip
 
-      config.vm.provision :shell, :inline => "playground/coreos/bootstrap.sh", :privileged => true
+      config.vm.provision :shell, :path => "coreos/bootstrap.sh", :privileged => true
     end
   end
 end

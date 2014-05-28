@@ -5,6 +5,8 @@ if [ ! -d "playground" ]; then
 else
   cd playground
   git pull
+  cd ..
 fi
 
-cp -v user-data-`uname -n` /var/lib/coreos-vagrant/
+echo `pwd`
+cp -v playground/coreos/user-data/`uname -n` /var/lib/coreos-vagrant/
