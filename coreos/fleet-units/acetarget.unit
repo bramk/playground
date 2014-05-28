@@ -1,0 +1,7 @@
+[Unit]
+Description=Ace Agent
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker run bramk/target /usr/bin/java -Dagent.identification.agentid=Agent-%m -Dagent.discovery.serverurls=http://172.17.8.1:8080 -jar /tmp/org.apache.ace.agent.launcher.felix-1.0.0.jar
