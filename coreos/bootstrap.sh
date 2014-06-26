@@ -9,4 +9,4 @@ else
 fi
 
 echo `pwd`
-cp -v playground/coreos/user-data/`uname -n` /var/lib/coreos-vagrant/
+cp -v playground/coreos/user-data/`uname -n` /var/lib/coreos-vagrant/vagrantfile-user-data
