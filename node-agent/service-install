@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ ! -f "nodeagent.service" ]; then
+  echo "Run this n the $IMAGE dir only!"
+  exit 1  
+fi
+
+sudo cp nodeagent.service /etc/systemd/system
+sudo systemctl enable /etc/systemd/system/nodeagent.service
+sudo systemctl start nodeagent.service
+exit 0

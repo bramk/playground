@@ -1,0 +1,11 @@
+#!/bin/sh
+
+IMAGE="playground/nodeagent"
+
+if [ ! -f "Dockerfile" ]; then
+  echo "Run this n the $IMAGE dir only!"
+  exit 1  
+fi
+
+docker build -t $IMAGE .
+exit 0
