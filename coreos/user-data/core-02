@@ -18,6 +18,20 @@ coreos:
         [Service]
         Environment=FLEET_PUBLIC_IP=$public_ipv4
         ExecStart=/usr/bin/fleet
+    - name: nodeagent.service
+      command: start
+      enable: true
+      content: |
+        [Unit]
+        Description=Node Agent
+        After=docker.service
+        Requires=docker.service
+
+        [Service]
+        ExecStart=/usr/bin/docker run playground/nodeagent /tmp/nodeagent.sh start %m
+
+        [Install]
+        WantedBy=multi-user.target
     - name: docker-tcp.socket
       command: start
       enable: true
