@@ -3,9 +3,9 @@
 
 require 'fileutils'
 
-$num_instances = 3
+$num_instances = 1
 $vb_gui = false
-$vb_memory = 2048
+$vb_memory = 4096
 $vb_cpus = 2
 
 Vagrant.configure("2") do |config|
